@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LexiVault - Lawyer Dashboard</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter for professional typography -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              deep: '#1e293b', // Deep professional blue (Charcoalish)
+              primary: '#2563eb', // Primary professional blue
+              accent: '#3b82f6',
+              bgLight: '#f8fafc',
+              bgDark: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Custom scrollbar for clean UI */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 10px;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Mobile iOS specific status bar spacing */
+    .ios-status-bar {
+      height: 44px;
+    }
+  </style>
+</head>
+<body class="bg-brand-bgLight dark:bg-brand-bgDark text-brand-deep dark:text-gray-100 font-sans transition-colors duration-300">
+<!-- BEGIN: Main Dashboard Wrapper -->
+<main class="max-w-md mx-auto min-h-screen flex flex-col pb-20 shadow-2xl bg-white dark:bg-brand-bgDark">
+<!-- BEGIN: Header Section -->
+<header class="px-6 pt-12 pb-6 flex justify-between items-center" data-purpose="dashboard-header">
+<div>
+<h2 class="text-sm font-medium text-gray-500 dark:text-gray-400">LexiVault Dashboard</h2>
+<h1 class="text-2xl font-bold tracking-tight">Welcome, Counselor</h1>
+</div>
+<!-- Profile Icon / Avatar -->
+<div class="relative" data-purpose="profile-section">
+<div class="w-12 h-12 rounded-2xl bg-brand-deep dark:bg-brand-primary flex items-center justify-center border-4 border-white dark:border-slate-800 shadow-lg overflow-hidden">
+<img alt="Lawyer Profile" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAruI4jxQzyWMk_E0Mpbin77f0uw8UN_pqTvkO8-bQ-9PWcCwnlj2AkbWFG94K9rkrD1NxVwR4Fkq4FLTx57u7W2FMlwMgRxpdgWARSs4RMvJIOJkrMlPGhSH6b_3tmNh0KEvtbX5ak9Zd8JH7G90Gks8Z4e5Aou5JgjLx90kObyp0MtgcjUjZ4YMOHvxFCCAzsw6muawTAEohyVd9vt7qo7no0OvYs9SPJf6mJdE7oa_YqyQbLo7WgeP6NrsWcx0mAyM47HrYL0Cg5"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-brand-bgDark rounded-full"></div>
+</div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Statistics Grid (2x2) -->
+<section class="px-6 grid grid-cols-2 gap-4" data-purpose="statistics-overview">
+<!-- Total Clients Card -->
+<div class="bg-blue-50 dark:bg-slate-800 p-4 rounded-3xl border border-blue-100 dark:border-slate-700">
+<div class="w-10 h-10 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+<svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Total Clients</p>
+<p class="text-xl font-bold">124</p>
+</div>
+<!-- Total Cases Card -->
+<div class="bg-indigo-50 dark:bg-slate-800 p-4 rounded-3xl border border-indigo-100 dark:border-slate-700">
+<div class="w-10 h-10 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+<svg class="h-5 w-5 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Total Cases</p>
+<p class="text-xl font-bold">56</p>
+</div>
+<!-- Upcoming Sessions Card -->
+<div class="bg-amber-50 dark:bg-slate-800 p-4 rounded-3xl border border-amber-100 dark:border-slate-700">
+<div class="w-10 h-10 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+<svg class="h-5 w-5 text-amber-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Upcoming</p>
+<p class="text-xl font-bold">04</p>
+</div>
+<!-- Overdue Payments Card -->
+<div class="bg-rose-50 dark:bg-slate-800 p-4 rounded-3xl border border-rose-100 dark:border-slate-700">
+<div class="w-10 h-10 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+<svg class="h-5 w-5 text-rose-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Overdue</p>
+<p class="text-xl font-bold">02</p>
+</div>
+</section>
+<!-- END: Statistics Grid -->
+<!-- BEGIN: Quick Actions & Search -->
+<section class="px-6 mt-8" data-purpose="quick-actions-section">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Quick Actions</h3>
+<button class="text-brand-primary text-sm font-semibold">View All</button>
+</div>
+<!-- Search Bar -->
+<div class="relative mb-6">
+<span class="absolute inset-y-0 left-0 pl-4 flex items-center">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+<input class="block w-full pl-12 pr-4 py-4 bg-gray-100 dark:bg-slate-800 border-none rounded-2xl text-sm focus:ring-2 focus:ring-brand-primary transition-all" placeholder="Search case, client or date..." type="text"/>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center space-x-2 py-4 px-4 bg-brand-deep dark:bg-slate-700 text-white rounded-2xl hover:opacity-90 transition-opacity">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="font-medium text-sm">Add Client</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-4 px-4 bg-white dark:bg-slate-800 border-2 border-brand-deep dark:border-slate-700 rounded-2xl hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="font-medium text-sm">Add Case</span>
+</button>
+</div>
+</section>
+<!-- END: Quick Actions & Search -->
+<!-- BEGIN: Upcoming Sessions List -->
+<section class="px-6 mt-8 flex-1 overflow-y-auto" data-purpose="upcoming-sessions-list">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Upcoming Sessions</h3>
+<button class="text-gray-400 hover:text-brand-primary">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Session Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700 flex items-center">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl text-blue-700 dark:text-blue-300 mr-4">
+<span class="text-xs font-bold uppercase">Oct</span>
+<span class="text-lg font-bold">12</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Ahmed Al-Mansouri</h4>
+<p class="text-xs text-gray-500">Case #LX-9022 • Civil Court</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-brand-primary">09:30 AM</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-green-100 text-green-800">Confirmed</span>
+</div>
+</div>
+<!-- Session Card 2 -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700 flex items-center">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-gray-100 dark:bg-slate-700 rounded-2xl text-gray-500 dark:text-gray-400 mr-4">
+<span class="text-xs font-bold uppercase">Oct</span>
+<span class="text-lg font-bold">14</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Mariam Hassan</h4>
+<p class="text-xs text-gray-500">Case #LX-1104 • Supreme Court</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-brand-primary">11:00 AM</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-800">Pending</span>
+</div>
+</div>
+<!-- Session Card 3 -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700 flex items-center opacity-60">
+<div class="flex flex-col items-center justify-center w-14 h-14 bg-gray-100 dark:bg-slate-700 rounded-2xl text-gray-500 dark:text-gray-400 mr-4">
+<span class="text-xs font-bold uppercase">Oct</span>
+<span class="text-lg font-bold">15</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Khalid Rashid</h4>
+<p class="text-xs text-gray-500">Case #LX-8821 • District Court</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-brand-primary">02:15 PM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Upcoming Sessions List -->
+<!-- BEGIN: Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white/80 dark:bg-brand-bgDark/80 backdrop-blur-lg border-t border-gray-100 dark:border-slate-800 px-8 py-4 flex justify-between items-center z-50">
+<button class="text-brand-primary">
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a3 3 0 003 3h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a3 3 0 003-3v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+</svg>
+</button>
+<button class="text-gray-400 hover:text-brand-primary transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Floating Action Circle -->
+<button class="bg-brand-primary w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl -mt-10 border-4 border-white dark:border-brand-bgDark">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="text-gray-400 hover:text-brand-primary transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="text-gray-400 hover:text-brand-primary transition-colors" id="theme-toggle">
+<svg class="h-6 w-6" fill="none" id="moon-icon" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</nav>
+<!-- END: Bottom Navigation Bar -->
+</main>
+<!-- END: Main Dashboard Wrapper -->
+<!-- BEGIN: Interactive Scripts -->
+<script data-purpose="theme-handler">
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        htmlElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Check preference
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      htmlElement.classList.add('dark');
+    }
+  </script>
+<!-- END: Interactive Scripts -->
+</body></html>
